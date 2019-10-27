@@ -8,23 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DownloadImageViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var dowloadLabel: UILabel!
-    @IBOutlet weak var dowloadButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.isHidden = true
         activityIndicator.hidesWhenStopped = true
+        downloadImage()
     }
 
-
-    @IBAction func dowloadActionButton(_ sender: Any) {
-        
-        dowloadLabel.isHidden = true
-        dowloadButton.isEnabled = false
+    func downloadImage() {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         
@@ -39,7 +34,6 @@ class ViewController: UIViewController {
                 }
             }
         }.resume()
-        
     }
 }
 

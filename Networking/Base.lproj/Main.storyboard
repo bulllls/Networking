@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9UD-qT-QfR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -7,62 +7,135 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Request View Controller-->
+        <scene sceneID="bEc-xe-ymn">
+            <objects>
+                <viewController id="UBc-UX-og1" customClass="RequestViewController" customModule="Networking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8RD-Dl-tP6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="b9A-wF-n7j">
+                                <rect key="frame" x="20" y="296" width="374" height="358"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUH-FM-MbO">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="108"/>
+                                        <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="108" id="mUn-cP-wlL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Download Image">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="downloadAction:" destination="UBc-UX-og1" eventType="touchUpInside" id="bdd-oC-DLn"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="show" id="318-R2-Y3t"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Za-yE-c6C">
+                                        <rect key="frame" x="0.0" y="125" width="374" height="108"/>
+                                        <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="108" id="qiN-gD-ycF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Get">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getAction:" destination="UBc-UX-og1" eventType="touchUpInside" id="fsm-wx-4Fh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvQ-7n-LzI">
+                                        <rect key="frame" x="0.0" y="250" width="374" height="108"/>
+                                        <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="108" id="T7T-3W-fk1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Post">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="postAction:" destination="UBc-UX-og1" eventType="touchUpInside" id="QFD-28-ll8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Mlz-so-wia" firstAttribute="trailing" secondItem="b9A-wF-n7j" secondAttribute="trailing" constant="20" id="Xhu-1P-KBN"/>
+                            <constraint firstItem="b9A-wF-n7j" firstAttribute="leading" secondItem="Mlz-so-wia" secondAttribute="leading" constant="20" id="dqd-Ky-6X5"/>
+                            <constraint firstItem="b9A-wF-n7j" firstAttribute="centerY" secondItem="Mlz-so-wia" secondAttribute="centerY" id="sYe-LP-28s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mlz-so-wia"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ncz-4N-ong"/>
+                    <connections>
+                        <outlet property="downloadImageButton" destination="vUH-FM-MbO" id="U9K-tp-aYR"/>
+                        <outlet property="getRequestButton" destination="3Za-yE-c6C" id="vcz-Md-8As"/>
+                        <outlet property="postRequestButton" destination="kvQ-7n-LzI" id="rUm-Fa-eKd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WbT-kP-P8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016" y="139"/>
+        </scene>
+        <!--Download Image View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Networking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DownloadImageViewController" customModule="Networking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eKD-ng-U1m">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Загрузить картинку" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TF8-do-XD0">
-                                <rect key="frame" x="0.0" y="299" width="414" height="273"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGw-hf-5hQ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <connections>
-                                    <action selector="dowloadActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CoN-n1-Y0L"/>
-                                </connections>
-                            </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="2ER-19-ySz">
-                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <rect key="frame" x="197" y="460" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uGw-hf-5hQ" secondAttribute="bottom" id="16a-s3-rO5"/>
                             <constraint firstItem="2ER-19-ySz" firstAttribute="centerY" secondItem="eKD-ng-U1m" secondAttribute="centerY" id="3NQ-Up-dxH"/>
-                            <constraint firstItem="uGw-hf-5hQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3de-oH-hcs"/>
-                            <constraint firstItem="TF8-do-XD0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="255" id="9yv-xT-Z3w"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eKD-ng-U1m" secondAttribute="bottom" constant="-34" id="D3O-Uw-Wwz"/>
-                            <constraint firstItem="uGw-hf-5hQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KAw-oL-NCT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uGw-hf-5hQ" secondAttribute="trailing" id="T8H-Yk-Fuj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eKD-ng-U1m" secondAttribute="trailing" id="fSN-CX-35Z"/>
                             <constraint firstItem="eKD-ng-U1m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-44" id="moR-NB-Ora"/>
                             <constraint firstItem="2ER-19-ySz" firstAttribute="centerX" secondItem="eKD-ng-U1m" secondAttribute="centerX" id="pqw-oE-H8W"/>
                             <constraint firstItem="eKD-ng-U1m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rZp-o6-dIL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TF8-do-XD0" secondAttribute="bottom" constant="290" id="vHp-0L-fAt"/>
-                            <constraint firstItem="TF8-do-XD0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vl5-We-xUe"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TF8-do-XD0" secondAttribute="trailing" id="yrL-6D-9TW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Xdr-xH-0Ad"/>
                     <connections>
                         <outlet property="activityIndicator" destination="2ER-19-ySz" id="q9x-Z4-8ti"/>
-                        <outlet property="dowloadButton" destination="uGw-hf-5hQ" id="0SU-Y6-adF"/>
-                        <outlet property="dowloadLabel" destination="TF8-do-XD0" id="Qon-hh-ItR"/>
                         <outlet property="image" destination="eKD-ng-U1m" id="PqU-C7-5rm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+            <point key="canvasLocation" x="1757" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zob-fs-QuK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9UD-qT-QfR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HKf-a2-j1z">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UBc-UX-og1" kind="relationship" relationship="rootViewController" id="5KO-4D-neZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bMq-5y-2ZL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="253.62318840579712" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>
