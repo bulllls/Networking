@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DownloadImageViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var dowloadLabel: UILabel!
     @IBOutlet weak var dowloadButton: UIButton!
